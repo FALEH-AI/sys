@@ -6,82 +6,104 @@
     <title>إدارة الإنشاءات | نظام إدارة شركات البناء</title>
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
     <style>
+
 :root {
-    /* ===== هوية فعلية للنظام: أخضر أمْدَلة غامق + كهرماني دافئ، أسطح متينة ===== */
-    --primary: #1e5a3a;          /* أخضر بناء غامق واثق */
-    --primary-light: #2f7a4f;
-    --primary-dark: #16432c;
-    --accent: #c97a1e;           /* كهرماني دافئ للتركيز */
-    --accent-light: #e08f2e;
-    --success: #2f9e5f;
-    --danger: #c23b2b;
-    --warning: #d9921a;
+    /* ===== Premium Dark Glass — deep navy + electric blue ===== */
+    --primary: #0f6fd6;
+    --primary-light: #2f8bea;
+    --primary-dark: #0a2f55;
+    --accent: #3b9dff;
+    --accent-light: #5cb1ff;
+    --success: #0f9f63;
+    --danger: #d64248;
+    --warning: #b57a10;
 
-    --bg: #eef1ee;               /* رمادي محايد دافئ */
-    --bg-2: #e3e7e2;
-    --card: #ffffff;
-    --card-2: #f7f9f7;
-    --text: #26302a;
-    --text-light: #6b7a70;
-    --border: #e0e5df;
-    --border-strong: #cbd3c9;
+    --bg: #0a0f18;
+    --bg-2: #111a2b;
+    --card: rgba(20, 30, 48, 0.55);
+    --card-2: rgba(28, 40, 62, 0.55);
+    --text: #eef4ff;
+    --text-light: #b6c5de;
+    --border: rgba(120,150,200,0.14);
+    --border-strong: rgba(120,160,220,0.28);
 
-    --sidebar-bg: #fbfcfa;
-    --sidebar-text: #37413b;
-    --sidebar-text-muted: #8b968e;
-    --sidebar-active-bg: #e9f2ec;
-    --sidebar-active-text: #1e5a3a;
+    --sidebar-bg: #0a0f18;
+    --sidebar-text: #b6c5de;
+    --sidebar-text-muted: #7486a6;
+    --sidebar-active-bg: rgba(59,157,255,0.12);
+    --sidebar-active-text: #5cb1ff;
 
-    --shadow: 0 1px 2px rgba(30,42,34,0.05), 0 2px 8px rgba(30,42,34,0.04);
-    --shadow-lg: 0 6px 24px rgba(30,42,34,0.10), 0 2px 6px rgba(30,42,34,0.05);
-    --focus-ring: 0 0 0 3px rgba(47,122,79,0.18);
+    --shadow: 0 4px 18px rgba(0,0,0,0.4);
+    --shadow-lg: 0 18px 44px rgba(0,0,0,0.55);
+    --shadow-glow: 0 0 24px rgba(59,157,255,0.2);
 
-    --overlay: rgba(24,32,27,0.5);
-    --th-bg: #f2f5f2;
-    --row-hover: #f6f8f6;
-    --input-bg: #ffffff;
+    --overlay: rgba(0,0,0,0.6);
+    --th-bg: #111a2b;
+    --row-hover: #161f2e;
+    --input-bg: #111a2b;
 
     --sidebar-width: 264px;
     --header-height: 66px;
-    --radius: 10px;
-    --radius-sm: 6px;
+    --radius: 16px;
+    --radius-sm: 10px;
+    --radius-pill: 999px;
+
+    --grad-brand: linear-gradient(135deg, #3b9dff, #7dd3fc);
+    --grad-warm: linear-gradient(135deg, #fbbf24, #fb7185);
     --font: 'Tajawal', -apple-system, 'Segoe UI', system-ui, sans-serif;
 }
 
 /* ===== الوضع الداكن ===== */
-[data-theme="dark"] {
-    --primary: #4d9a6c;
-    --primary-light: #64b186;
-    --primary-dark: #a8d4ba;
-    --accent: #e09a3a;
-    --accent-light: #ecb25e;
-    --success: #4fbf7f;
-    --danger: #e4675a;
-    --warning: #e2a343;
+[data-theme="light"] {
+    --primary: #0b6fd6;
+    --primary-light: #0f7fea;
+    --primary-dark: #095db4;
+    --accent: #0b6fd6;
+    --accent-light: #0f7fea;
+    --success: #0f9f63;
+    --danger: #d64248;
+    --warning: #b57a10;
 
-    --bg: #141a16;
-    --bg-2: #1a211c;
-    --card: #1d241f;
-    --card-2: #232b25;
-    --text: #dde4de;
-    --text-light: #93a097;
-    --border: #2a332c;
-    --border-strong: #3a453d;
+    --bg: #eef2f9;
+    --bg-2: #e6ecf6;
+    --card: #ffffff;
+    --card-2: #f6f9fd;
+    --text: #0d1b30;
+    --text-light: #43546e;
+    --border: rgba(20,50,90,0.10);
+    --border-strong: rgba(20,60,110,0.22);
 
-    --sidebar-bg: #111712;
-    --sidebar-text: #c6d0c8;
-    --sidebar-text-muted: #7d8a80;
-    --sidebar-active-bg: #1e2e24;
-    --sidebar-active-text: #7fd0a0;
+    --sidebar-bg: #ffffff;
+    --sidebar-text: #43546e;
+    --sidebar-text-muted: #7c8ba6;
+    --sidebar-active-bg: rgba(11,111,214,0.10);
+    --sidebar-active-text: #0b6fd6;
 
-    --shadow: 0 1px 2px rgba(0,0,0,0.35), 0 3px 12px rgba(0,0,0,0.28);
-    --shadow-lg: 0 8px 30px rgba(0,0,0,0.5), 0 2px 8px rgba(0,0,0,0.4);
-    --focus-ring: 0 0 0 3px rgba(77,154,108,0.28);
+    --shadow: 0 4px 16px rgba(15,35,65,0.08);
+    --shadow-lg: 0 18px 44px rgba(15,35,65,0.14);
+    --shadow-glow: 0 0 0 4px rgba(11,111,214,0.14);
 
-    --overlay: rgba(0,0,0,0.62);
-    --th-bg: #20281f;
-    --row-hover: #232b25;
-    --input-bg: #161c17;
+    --overlay: rgba(20,40,70,0.4);
+    --th-bg: #eef3fb;
+    --row-hover: #f6f9fd;
+    --input-bg: #ffffff;
+
+    --grad-brand: linear-gradient(135deg, #0b6fd6, #3b9dff);
+    --grad-warm: linear-gradient(135deg, #b57a10, #d64248);
+}
+
+
+/* ===== زجاجية حقيقية ===== */
+.card, .stat-card, .sidebar, .ios-card {
+  background: var(--card);
+  backdrop-filter: blur(18px) saturate(150%);
+  -webkit-backdrop-filter: blur(18px) saturate(150%);
+}
+body {
+  background-image:
+    radial-gradient(600px 400px at 78% -5%, rgba(59,157,255,0.15), transparent 60%),
+    radial-gradient(600px 500px at 8% 110%, rgba(59,157,255,0.07), transparent 60%);
+  background-attachment: fixed;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -332,20 +354,20 @@ table tr:last-child td { border-bottom: none; }
     white-space: nowrap;
 }
 .badge-success,
-[data-theme="dark"] .badge-success { background: #e3f3e9; color: #1e6e42; }
-[data-theme="dark"] .badge-success { background: #1c3527; color: #7fd0a0; }
+[data-theme="light"] .badge-success { background: #e3f3e9; color: #1e6e42; }
+[data-theme="light"] .badge-success { background: #1c3527; color: #7fd0a0; }
 .badge-warning,
-[data-theme="dark"] .badge-warning { background: #fbf3e0; color: #9a6a10; }
-[data-theme="dark"] .badge-warning { background: #3a2f1a; color: #e2b15e; }
+[data-theme="light"] .badge-warning { background: #fbf3e0; color: #9a6a10; }
+[data-theme="light"] .badge-warning { background: #3a2f1a; color: #e2b15e; }
 .badge-danger,
-[data-theme="dark"] .badge-danger { background: #fbe7e4; color: #a33a2c; }
-[data-theme="dark"] .badge-danger { background: #3a241f; color: #e8a096; }
+[data-theme="light"] .badge-danger { background: #fbe7e4; color: #a33a2c; }
+[data-theme="light"] .badge-danger { background: #3a241f; color: #e8a096; }
 .badge-info,
-[data-theme="dark"] .badge-info { background: #e3f3e9; color: #1e6e42; }
-[data-theme="dark"] .badge-info { background: #1c3527; color: #7fd0a0; }
+[data-theme="light"] .badge-info { background: #e3f3e9; color: #1e6e42; }
+[data-theme="light"] .badge-info { background: #1c3527; color: #7fd0a0; }
 .badge-primary,
-[data-theme="dark"] .badge-primary { background: #e9f2ec; color: #1e5a3a; }
-[data-theme="dark"] .badge-primary { background: #20352a; color: #8fd4ab; }
+[data-theme="light"] .badge-primary { background: #e9f2ec; color: #1e5a3a; }
+[data-theme="light"] .badge-primary { background: #20352a; color: #8fd4ab; }
 
 /* ================= النماذج ================= */
 .form-group { margin-bottom: 18px; }
@@ -479,14 +501,14 @@ textarea.form-control { resize: vertical; min-height: 74px; }
     transition: background 0.15s ease, transform 0.1s ease;
 }
 .action-btn.edit,
-[data-theme="dark"] .action-btn.edit { background: #e9f2ec; color: #1e5a3a; }
-[data-theme="dark"] .action-btn.edit { background: #20352a; color: #8fd4ab; }
+[data-theme="light"] .action-btn.edit { background: #e9f2ec; color: #1e5a3a; }
+[data-theme="light"] .action-btn.edit { background: #20352a; color: #8fd4ab; }
 .action-btn.delete,
-[data-theme="dark"] .action-btn.delete { background: #fbe7e4; color: #a33a2c; }
-[data-theme="dark"] .action-btn.delete { background: #3a241f; color: #e8a096; }
+[data-theme="light"] .action-btn.delete { background: #fbe7e4; color: #a33a2c; }
+[data-theme="light"] .action-btn.delete { background: #3a241f; color: #e8a096; }
 .action-btn.view,
-[data-theme="dark"] .action-btn.view { background: #e3f3e9; color: #1e6e42; }
-[data-theme="dark"] .action-btn.view { background: #1c3527; color: #7fd0a0; }
+[data-theme="light"] .action-btn.view { background: #e3f3e9; color: #1e6e42; }
+[data-theme="light"] .action-btn.view { background: #1c3527; color: #7fd0a0; }
 .action-btn:hover { transform: translateY(-1px); filter: brightness(0.96); }
 
 /* ================= تفاصيل الفواتير ================= */
@@ -504,7 +526,7 @@ textarea.form-control { resize: vertical; min-height: 74px; }
 }
 .invoice-items-table { width: 100%; margin-bottom: 22px; }
 .invoice-items-table th { background: #f2f5f2; color: var(--text); padding: 11px; font-weight: 700; }
-[data-theme="dark"] .invoice-items-table th { background: var(--th-bg); }
+[data-theme="light"] .invoice-items-table th { background: var(--th-bg); }
 .invoice-total {
     text-align: left;
     font-size: 16.5px; font-weight: 800;
@@ -618,6 +640,22 @@ textarea.form-control { resize: vertical; min-height: 74px; }
 .mi-icon svg { width: 1.15em; height: 1.15em; vertical-align: -0.22em; display: inline-block; }
 .mi-icon { line-height: 0; }
 .icon-repl svg{width:1.15em;height:1.15em;vertical-align:-0.22em;display:inline-block}.icon-repl{line-height:0}.stat-icon .icon-repl svg,.icon-repl.icon-lg svg{width:1.3em;height:1.3em}
+
+
+/* Settings dropdown */
+.settings-menu{position:absolute;left:0;top:calc(100% + 6px);background:var(--card);border:1px solid var(--border-strong);border-radius:12px;box-shadow:var(--shadow-lg);z-index:60;min-width:200px;overflow:hidden;backdrop-filter:blur(16px);padding:6px}
+[data-theme="dark"] .settings-menu{background:var(--card);border-color:var(--border-strong)}
+.settings-item{display:flex;align-items:center;gap:10px;width:100%;text-align:right;padding:10px 14px;border:none;background:none;color:var(--text);font-family:inherit;font-size:14px;font-weight:600;cursor:pointer;border-radius:8px}
+.settings-item:hover{background:var(--bg-2)}
+.hidden{display:none}
+/* PIN overlay */
+.pin-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.65);backdrop-filter:blur(8px);z-index:5000;display:flex;align-items:center;justify-content:center;padding:20px}
+.pin-box{background:var(--card);border:1px solid var(--border-strong);border-radius:18px;padding:28px;width:100%;max-width:320px;box-shadow:var(--shadow-lg);text-align:center}
+.pin-inputs{display:flex;gap:10px;justify-content:center;margin:20px 0}
+.pin-digit{width:48px;height:60px;border:2px solid var(--border-strong);border-radius:12px;background:var(--bg);color:var(--text);font-size:26px;font-weight:800;text-align:center}
+.pin-digit:focus{outline:none;border-color:var(--primary);box-shadow:var(--shadow-glow)}
+.pin-title{font-size:18px;font-weight:800}
+.pin-sub{font-size:13px;color:var(--text-light);margin-top:4px}
 </style>
 </head>
 <body>
@@ -652,7 +690,19 @@ textarea.form-control { resize: vertical; min-height: 74px; }
         <h1 class="page-title" id="pageTitle">لوحة التحكم</h1>
     </div>
     <div class="header-left">
-        <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()" title="تبديل الوضع" aria-label="تبديل الوضع الليلي/النهاري">
+        
+        <div class="settings-wrap" style="position:relative">
+            <button class="theme-toggle" id="settingsBtn" onclick="toggleSettings()" title="الإعدادات" aria-label="الإعدادات">
+                <span class="mi-icon">☰</span>
+            </button>
+            <div id="settingsMenu" class="settings-menu hidden">
+                <button class="settings-item" onclick="showPinModal()">🔒 قفل التطبيق (PIN)</button>
+                <button class="settings-item" onclick="backupData()">⬇ نسخ احتياطي</button>
+                <button class="settings-item" onclick="restoreData()">⬆ استرجاع نسخة</button>
+                <button class="settings-item" onclick="printReport()">🖨 طباعة التقرير</button>
+            </div>
+        </div>
+<button class="theme-toggle" id="themeToggle" onclick="toggleTheme()" title="تبديل الوضع" aria-label="تبديل الوضع الليلي/النهاري">
             <span id="themeIcon">🌙</span>
         </button>
         <div class="search-box">
@@ -2772,13 +2822,93 @@ function toggleTheme() {
 (function initTheme(){
     let saved = null;
     try { saved = localStorage.getItem('sys_theme'); } catch(e){}
-    const pref = (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) ? 'dark' : 'light';
-    setTheme(saved || pref);
+    setTheme(saved || 'dark');
 })();
+
+
+// ==================== SETTINGS / BACKUP / PIN ====================
+function toggleSettings(){ document.getElementById('settingsMenu').classList.toggle('hidden'); }
+document.addEventListener('click', function(e){
+  var m=document.getElementById('settingsMenu'); if(!m) return;
+  if(!e.target.closest('.settings-wrap')) m.classList.add('hidden');
+});
+
+// ---- Backup / Restore ----
+function backupData(){
+  var all={};
+  for(var i=0;i<localStorage.length;i++){
+    var k=localStorage.key(i);
+    if(k && k.indexOf('construction_')===0) all[k]=localStorage.getItem(k);
+  }
+  var blob=new Blob([JSON.stringify(all,null,2)],{type:'application/json'});
+  var a=document.createElement('a'); a.href=URL.createObjectURL(blob);
+  a.download='saudhub_backup_'+new Date().toISOString().slice(0,10)+'.json'; a.click();
+  notify('تم حفظ النسخة الاحتياطية','success');
+}
+function restoreData(){
+  var inp=document.createElement('input'); inp.type='file'; inp.accept='.json';
+  inp.onchange=function(){
+    var f=inp.files[0]; if(!f) return;
+    var r=new FileReader();
+    r.onload=function(){
+      try{
+        var data=JSON.parse(r.result);
+        Object.keys(data).forEach(function(k){ localStorage.setItem(k,data[k]); });
+        notify('تمت الاستعادة بنجاح','success'); location.reload();
+      }catch(e){ notify('ملف غير صالح','error'); }
+    }; r.readAsText(f);
+  }; inp.click();
+}
+function printReport(){ window.print(); }
+
+// ---- PIN lock ----
+function deepGet(key,def){ try{ var d=JSON.parse(localStorage.getItem(key)||'null'); return d==null?def:d; }catch(e){ return def; } }
+function hasPin(){ return !!localStorage.getItem('sys_pin'); }
+function showPinModal(){
+  var ov=document.createElement('div'); ov.className='pin-overlay'; ov.id='pinOverlay';
+  ov.innerHTML='<div class="pin-box">'+
+    '<div class="pin-title" id="pinTitle">'+(hasPin()?'أدخل رمز الحماية':'إنشاء رمز حماية')+'</div>'+
+    '<div class="pin-sub" id="pinSub">'+(hasPin()?'أدخل الرمز لفتح التطبيق':'4 أرقام لحماية بياناتك')+'</div>'+
+    '<div class="pin-inputs"><input class="pin-digit" maxlength="1" inputmode="numeric"><input class="pin-digit" maxlength="1" inputmode="numeric"><input class="pin-digit" maxlength="1" inputmode="numeric"><input class="pin-digit" maxlength="1" inputmode="numeric"></div>'+
+    '<div class="flex" style="display:flex;gap:8px;justify-content:center">'+
+    (hasPin()?'<button class="btn btn-outline btn-sm" onclick="clearPin()">إزالة الرمز</button>':'')+
+    '<button class="btn btn-primary btn-sm" onclick="submitPin()">تأكيد</button></div>'+
+    '<div class="pin-sub" id="pinMsg" style="margin-top:10px"></div></div>';
+  document.body.appendChild(ov);
+  document.querySelectorAll('.pin-digit')[0].focus();
+  document.querySelectorAll('.pin-digit').forEach(function(inp,idx){
+    inp.addEventListener('keyup',function(){ if(this.value && idx<3) document.querySelectorAll('.pin-digit')[idx+1].focus(); });
+    inp.addEventListener('keydown',function(e){ if(e.key==='Backspace' && !this.value && idx>0) document.querySelectorAll('.pin-digit')[idx-1].focus(); });
+  });
+}
+function closePin(){ var o=document.getElementById('pinOverlay'); if(o) o.remove(); }
+function getDigits(){ return [...document.querySelectorAll('.pin-digit')].map(function(i){return i.value||''}).join(''); }
+function submitPin(){
+  var code=getDigits();
+  if(code.length!==4){ document.getElementById('pinMsg').textContent='أدخل الرقم الكامل (4 أرقام)'; return; }
+  if(hasPin()){
+    if(code===localStorage.getItem('sys_pin')){ closePin(); notify('مرحباً بعودتك','success'); }
+    else document.getElementById('pinMsg').textContent='رمز غير صحيح';
+  } else {
+    if(code.length<4){ document.getElementById('pinMsg').textContent='أدخل 4 أرقام'; return; }
+    localStorage.setItem('sys_pin',code);
+    closePin(); notify('تم تفعيل الحماية','success');
+  }
+}
+function clearPin(){
+  if(confirm('إزالة رمز الحماية؟')){
+    localStorage.removeItem('sys_pin'); closePin(); notify('أُزيل القفل','success');
+  }
+}
+// auto-lock on load if pin set
+function initLock(){
+  if(hasPin()){ setTimeout(showPinModal, 400); }
+}
 
 // ==================== INIT ====================
 document.addEventListener('DOMContentLoaded', () => {
     renderDashboard();
+    initLock();
 });
 </script>
 </body>
